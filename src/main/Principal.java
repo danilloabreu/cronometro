@@ -2,7 +2,11 @@ package main;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.AbstractAction;
+import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import main.cadastroCompetidor;
@@ -178,6 +182,11 @@ public class Principal extends javax.swing.JFrame {
         barraMenu.add(competidorMenu);
 
         capturaMenu.setText("Captura");
+        capturaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                capturaMenuMouseClicked(evt);
+            }
+        });
 
         iniciarCaptura.setText("Iniciar captura");
         iniciarCaptura.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -246,6 +255,16 @@ cadastroCompetidor cadastroCompetidor = new cadastroCompetidor();
         
     // TODO add your handling code here:
     }//GEN-LAST:event_competidorMenuMouseClicked
+
+    private void capturaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_capturaMenuMouseClicked
+        seletorCompetidor seletorCompetidor = new seletorCompetidor();
+        seletorCompetidor.setVisible(true);
+        painelPrincipal.add(seletorCompetidor);
+        
+        
+
+        
+    }//GEN-LAST:event_capturaMenuMouseClicked
 
     /**
      * @param args the command line arguments
